@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PackageIra.SelecionarCursoController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutY="-6.0" orientation="VERTICAL" prefHeight="501.0" prefWidth="535.0" stylesheets="@AppIRA.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="775.0" styleClass="background" stylesheets="@AppIRA.css">
+               <children>
+                  <Label layoutX="107.0" layoutY="64.0" text="Curso:" />
+                  <ComboBox fx:id="selectCurso" layoutX="169.0" layoutY="62.0" prefHeight="25.0" prefWidth="331.0" promptText="Selecione seu curso" />
+                  <Button layoutX="518.0" layoutY="58.0" mnemonicParsing="false" onAction="#ButtonSelectCurso" prefHeight="25.0" prefWidth="89.0" text="OK" />
+                  <Label layoutX="262.0" styleClass="label-header" text="Calculadora IRA">
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCursoSelected" layoutX="165.0" layoutY="96.0" prefHeight="21.0" prefWidth="600.0" textAlignment="CENTER" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font size="10.0" />
+                     </font></Label>
+                  <Label fx:id="resultIRA" alignment="CENTER" layoutX="-8.0" layoutY="252.0" prefHeight="30.0" prefWidth="257.0" styleClass="resul-ira" textAlignment="CENTER" textFill="#080bff" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="252.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="55.0" layoutY="124.0" prefHeight="17.0" prefWidth="698.0" styleClass="label-bright" text="  *Uma disciplina cursada mais de uma vez, no caso da existência de reprovação, será incluída no cálculo do IRA Individual o" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label layoutY="141.0" prefHeight="17.0" prefWidth="241.0" styleClass="label-bright" text="   mesmo número de vezes em que ela consta no histórico do aluno." AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label layoutX="55.0" layoutY="175.0" styleClass="label-bright" text="  *A disciplina reprovada por frequência terá nota final zero" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label layoutX="6.0" layoutY="203.0" styleClass="label-bright" text="  *Disciplinas inseridas no histórico por intermédio de aproveitamento, tanto interno como externo, não farão parte do" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label layoutY="220.0" styleClass="label-bright" text="   cálculo do IRA Individual." AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="752.0" styleClass="background">
+               <children>
+                  <ComboBox fx:id="selectDisciplina" layoutX="99.0" layoutY="38.0" prefHeight="25.0" prefWidth="300.0" promptText="Selecione as disciplinas para calculo do IRA" />
+                  <Label layoutX="14.0" layoutY="40.0" text="Disciplinas: " />
+                  <TextField fx:id="txtNota" layoutX="560.0" layoutY="32.0" prefHeight="25.0" prefWidth="52.0" promptText="nota" />
+                  <Button layoutX="658.0" layoutY="29.0" mnemonicParsing="false" onAction="#ButtonSelectDisciplina" text="Adicionar" />
+                  <TableView fx:id="tabela" layoutX="34.0" layoutY="74.0" prefHeight="209.0" prefWidth="612.0">
+                    <columns>
+                      <TableColumn fx:id="codigoDisciplina" prefWidth="65.0" text="Código" />
+                      <TableColumn fx:id="nomeDisciplina" prefWidth="238.0" text="Nome" />
+                        <TableColumn fx:id="chDisciplina" prefWidth="38.0" text="CH" />
+                        <TableColumn fx:id="creditoDisciplina" prefWidth="73.0" text="Creditos" />
+                        <TableColumn fx:id="perioDisciplina" prefWidth="68.0" text="Período" />
+                        <TableColumn fx:id="notaDisciplina" minWidth="0.0" prefWidth="50.0" text="Nota" />
+                        <TableColumn fx:id="situacaoDisciplina" prefWidth="74.0" text="Situacao" />
+                    </columns>
+                  </TableView>
+                  <CheckBox fx:id="trancadoSituacao" layoutX="405.0" layoutY="42.0" mnemonicParsing="false" text="Trancada" textFill="#e1a910" />
+                  <Button layoutX="659.0" layoutY="215.0" mnemonicParsing="false" onAction="#ButtonRemover" text="Remover" />
+                  <Button layoutX="659.0" layoutY="258.0" mnemonicParsing="false" onAction="#ButtonCalcularIRA" prefHeight="33.0" prefWidth="106.0" text="Calcular" />
+                  <TextField fx:id="txtPeriodo" layoutX="492.0" layoutY="32.0" prefHeight="17.0" prefWidth="52.0" promptText="periodo">
+                     <font>
+                        <Font size="10.0" />
+                     </font></TextField>
+                  <Label layoutX="492.0" layoutY="6.0" text="Período" />
+                  <Label layoutX="551.0" layoutY="6.0" text="Nota Final" />
+                  <Button layoutX="659.0" layoutY="171.0" mnemonicParsing="false" onAction="#ButtonAddNovoDisciplina" prefHeight="33.0" prefWidth="106.0" text="Novo" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
