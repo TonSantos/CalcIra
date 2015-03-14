@@ -1,4 +1,4 @@
-Aplicatição para
-calculo de Indice de Rendimento Academico
+#Aplicação para
+cálculo de Indice de Rendimento Academico(IRA)
 dos Alunos da
-Universidade Federal do Ceará
+Universidade Federal do Ceará.#
