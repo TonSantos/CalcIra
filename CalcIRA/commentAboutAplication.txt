@@ -1,0 +1,4 @@
+Aplicatição para
+calculo de Indice de Rendimento Academico
+dos Alunos da
+Universidade Federal do Ceará
